@@ -1,6 +1,8 @@
 FIRE
 ====
 
+[![Build Status](https://travis-ci.org/RenatasNarmontas/fire.svg?branch=master)](https://travis-ci.org/RenatasNarmontas/fire)
+
 Unit tested Spring application with Restful API.
 
 Requirements
