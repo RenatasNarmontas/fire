@@ -35,7 +35,7 @@ gradlew bootRun
 ```
 
 You can access the application API using favourite browser.
-* Navigate to `http://localhost:8080/fire?age=0&student=no&income=0` to receive recommended bundle
+* Navigate to `http://localhost:8080/fire?age=0&student=true&income=0` to receive recommended bundle
 * Navigate to `http://localhost:8080/bundle?Junior+Saver&age=17&student=false&income=0` to verify bundle availability
  
 Test
