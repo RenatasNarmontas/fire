@@ -1,6 +1,7 @@
 package fire.service;
 
 import fire.constants.BundleEnum;
+import fire.constants.MessagesEnum;
 import fire.domain.Bundle;
 import fire.exception.BundleException;
 import fire.exception.CustomerException;
@@ -27,18 +28,18 @@ public class CustomerServiceImpl implements CustomerService {
 
     // Check entered bundle for availability
     if (!validateBundleName(bundle)) {
-      throw new CustomerException("Invalid bundle name");
+      throw new CustomerException(MessagesEnum.INVALID_BUNDLE_NAME.getMessage());
     }
 
     if (age < 0) {
       // Invalid age
-      throw new CustomerException("Age can't be < 0");
+      throw new CustomerException(MessagesEnum.AGE_CANT_BE_LESS_THAN_0.getMessage());
     } else if (age < 18) {
       // Only Junior Saver should be available for age < 18
       if (bundle.equals(BundleEnum.JUNIOR_SAVER.getBundleName())) {
         return true;
       } else {
-        throw new CustomerException("Age should be > 17");
+        throw new CustomerException(MessagesEnum.AGE_SHOULD_BE_MORE_THAN_17.getMessage());
       }
     } else {
       // Need to evaluate almost all bundles in that age range (except Junior Saver)
@@ -48,7 +49,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (student) {
           return true;
         } else {
-          throw new CustomerException("Customer is not a student");
+          throw new CustomerException(MessagesEnum.CUSTOMER_IS_NOT_A_STUDENT.getMessage());
         }
       }
 
@@ -57,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (income > 0) {
           return true;
         } else {
-          throw new CustomerException("Income should be > 0");
+          throw new CustomerException(MessagesEnum.INCOME_SHOULD_BE_MORE_THAN_0.getMessage());
         }
       }
 
@@ -66,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (income > 12000) {
           return true;
         } else {
-          throw new CustomerException("Income should be > 12000");
+          throw new CustomerException(MessagesEnum.INCOME_SHOULD_BE_MORE_THAN_12000.getMessage());
         }
       }
 
@@ -75,13 +76,13 @@ public class CustomerServiceImpl implements CustomerService {
         if (income > 40000) {
           return true;
         } else {
-          throw new CustomerException("Income should be > 40000");
+          throw new CustomerException(MessagesEnum.INCOME_SHOULD_BE_MORE_THAN_40000.getMessage());
         }
       }
     }
 
     // Junior Saver bundle was requested for customer who have age > 17
-    throw new CustomerException("Age should be < 18");
+    throw new CustomerException(MessagesEnum.AGE_SHOULD_BE_LESS_THAN_18.getMessage());
   }
 
   /**
@@ -96,7 +97,7 @@ public class CustomerServiceImpl implements CustomerService {
     Bundle bundle = new Bundle();
     // Evaluate by age first
     if (age < 0) {
-      throw new BundleException("Age can't be < 0");
+      throw new BundleException(MessagesEnum.AGE_CANT_BE_LESS_THAN_0.getMessage());
     } else if (age < 18) {
       bundle.setBundleName(BundleEnum.JUNIOR_SAVER.getBundleName());
       return bundle;
@@ -122,7 +123,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     // No matches
-    throw new BundleException("No Bundle available");
+    throw new BundleException(MessagesEnum.NO_BUNDLE_AVAILABLE.getMessage());
   }
 
   /**
