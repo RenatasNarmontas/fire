@@ -7,29 +7,30 @@ package fire.constants;
  */
 public enum Bundle {
 
-    JUNIOR_SAVER("Junior Saver"),
-    STUDENT("Student"),
-    CLASSIC("Classic"),
-    CLASSIC_PLUS("Classic Plus"),
-    GOLD("Gold");
+  JUNIOR_SAVER("Junior Saver"),
+  STUDENT("Student"),
+  CLASSIC("Classic"),
+  CLASSIC_PLUS("Classic Plus"),
+  GOLD("Gold");
 
-    private String bundleName;
+  private String bundleName;
 
-    /**
-     * Constructor
-     *
-     * @param bundleName set bundle name
-     */
-    Bundle (final String bundleName) {
-        this.bundleName = bundleName;
-    }
+  /**
+   * Constructor
+   *
+   * @param bundleName set bundle name
+   */
+  Bundle(final String bundleName) {
+    this.bundleName = bundleName;
+  }
 
-    /**
-     * Get bundle name
-     *
-     * @return bundle name
-     */
-    public String getBundleName() {
-        return bundleName;
-    }
+  /**
+   * Get bundle name
+   *
+   * @return bundle name
+   */
+  public String getBundleName() {
+    return bundleName;
+  }
+
 }

@@ -11,14 +11,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
 
-    /**
-     * Entry point
-     *
-     * @param args command line arguments
-     * @throws Exception if some Exception occurs
-     */
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
-    }
+  /**
+   * Entry point
+   *
+   * @param args command line arguments
+   * @throws Exception if some Exception occurs
+   */
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(Application.class, args);
+  }
 
 }
