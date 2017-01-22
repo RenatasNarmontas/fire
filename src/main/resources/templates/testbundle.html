@@ -1,0 +1,64 @@
+<html>
+<body>
+
+<form action="#" th:action="@{/testbundle}" th:object="${customer}" method="get">
+    <table>
+        <tr>
+            <td>Bundle to verify:</td>
+            <td>
+                <select th:field="*{bundle}">
+                    <option th:each="bundle : ${T(fire.constants.BundleEnum).values()}" th:value="${bundle.bundleName}" th:text="${bundle.bundleName}"></option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Age:</td>
+            <td>
+                <select th:field="*{age}">
+                    <option value="17">0-17</option>
+                    <option value="18">18-64</option>
+                    <option value="65">65+</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Student:</td>
+            <td>
+                <select th:field="*{student}">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Income:</td>
+            <td>
+                <select th:field="*{income}">
+                    <option value="0">0</option>
+                    <option value="1">1-12000</option>
+                    <option value="12001">12001-40000</option>
+                    <option value="40001">40001+</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Verify"/></td>
+        </tr>
+
+    </table>
+</form>
+
+<h3>Server response code and text: <span th:text="${response}">false</span></h3>
+
+<p>bundle: <span th:text="${customer.bundle}">Junior</span></p>
+<p>age: <span th:text="${customer.age}">0-17</span></p>
+<p>student: <spanp th:text="${customer.student}">Yes</spanp></p>
+<p>income: <spanp th:text="${customer.income}">0</spanp></p>
+
+
+</body>
+</html>

@@ -49,6 +49,13 @@ Navigate to `fire` folder and run command.
 gradlew test
 ```
  
+Bonus
+-----
+
+You can access simple client to visually test Rest API functionality. Just run embedded server (as
+it is described in `Usage` section) and navigate to `http://localhost:8080/testbundle` or 
+`http://localhost:8080/testfire`
+
 -----
 
 #### 2017 &copy; Renatas Narmontas
