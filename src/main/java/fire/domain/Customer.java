@@ -1,4 +1,4 @@
-package fire.model;
+package fire.domain;
 
 /**
  * Created by rena17 on 1/22/2017.
@@ -11,6 +11,28 @@ public class Customer {
   private boolean student;
   private int income;
   private String bundle = "";
+
+  /**
+   * Constructor
+   *
+   * @param age customer age
+   * @param student student status
+   * @param income customer income
+   * @param bundle customer bundle
+   */
+  public Customer(int age, boolean student, int income, String bundle) {
+    this.age = age;
+    this.student = student;
+    this.income = income;
+    this.bundle = bundle;
+  }
+
+  /**
+   * Empty constructor
+   */
+  public Customer() {
+
+  }
 
   /**
    * @return customer age
@@ -66,6 +88,16 @@ public class Customer {
    */
   public void setBundle(String bundle) {
     this.bundle = bundle;
+  }
+
+  @Override
+  public String toString() {
+    return "Customer{" +
+        "age=" + age +
+        ", student=" + student +
+        ", income=" + income +
+        ", bundle='" + bundle + '\'' +
+        '}';
   }
 
 }

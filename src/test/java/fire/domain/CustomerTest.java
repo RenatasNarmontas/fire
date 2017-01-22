@@ -1,4 +1,4 @@
-package fire.model;
+package fire.domain;
 
 import static org.junit.Assert.*;
 

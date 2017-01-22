@@ -1,6 +1,8 @@
 package fire.service;
 
-import org.springframework.http.ResponseEntity;
+import fire.domain.Bundle;
+import fire.exception.BundleException;
+import fire.exception.CustomerException;
 
 /**
  * Created by rena17 on 1/22/2017.
@@ -19,8 +21,8 @@ public interface CustomerService {
    * @param income customer income
    * @return ResponseEntity<String>
    */
-  ResponseEntity<String> validateBundleAgainstQuestions(String bundle, int age, boolean student,
-      int income);
+  boolean validateBundleAgainstQuestions(String bundle, int age, boolean student,
+      int income) throws CustomerException;
 
   /**
    * Returns recommended bundle name according to age, student and income values
@@ -29,7 +31,8 @@ public interface CustomerService {
    * @param student customer student status
    * @param income customer income
    * @return ResponseEntity<String>
+   * @throws BundleException throw exception if parameters is invalid or bundle not found
    */
-  ResponseEntity<String> getRecommendedBundle(int age, boolean student, int income);
+  Bundle getRecommendedBundle(int age, boolean student, int income) throws BundleException;
 
 }

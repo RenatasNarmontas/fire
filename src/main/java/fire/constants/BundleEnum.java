@@ -5,7 +5,7 @@ package fire.constants;
  *
  * All available bundles
  */
-public enum Bundle {
+public enum BundleEnum {
 
   JUNIOR_SAVER("Junior Saver"),
   STUDENT("Student"),
@@ -20,7 +20,7 @@ public enum Bundle {
    *
    * @param bundleName set bundle name
    */
-  Bundle(final String bundleName) {
+  BundleEnum(final String bundleName) {
     this.bundleName = bundleName;
   }
 
