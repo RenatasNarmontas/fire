@@ -43,7 +43,7 @@ public class BundleController {
       @RequestParam(value = "student", required = false) boolean student,
       @RequestParam(value = "income", required = false, defaultValue = "0") int income
   ) {
-    Bundle bundle = null;
+    Bundle bundle;
     try {
       bundle = customerService.getRecommendedBundle(age, student, income);
     } catch (BundleException e) {
